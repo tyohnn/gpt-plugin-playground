@@ -1,0 +1,16 @@
+{
+    "name": "fixture",
+    "version": "0.1.0",
+    "extensions": {
+        "com.openai": {
+            "interface": {
+                "displayName": "본보기",
+                "shortDescription": "플레이그라운드가 제 몸을 재는 본보기 플러그인",
+                "longDescription": "게시판 화면 하나와 문서 편집기 하나가 있어요. 문서 편집기는 .fixdoc 파일을 바이트로 읽고, 모델이 보낸 값으로 칸을 채우고, 원래 자리에 저장해요.",
+                "defaultPrompt": ["게시판 보여 줘"],
+                "logo": "./assets/icon.svg"
+            },
+            "onboardingSkill": "fill"
+        }
+    }
+}
