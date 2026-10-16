@@ -7,8 +7,8 @@
         "host-playground": "dist/cli.js"
     },
     "exports": {
-        ".": "./dist/server.js",
-        "./playwright": "./dist/playwright.js"
+        ".": { "import": "./dist/server.js", "require": "./dist/server.cjs" },
+        "./playwright": { "import": "./dist/playwright.js", "require": "./dist/playwright.cjs" }
     },
     "files": ["dist"],
     "scripts": {
