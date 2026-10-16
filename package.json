@@ -1,0 +1,22 @@
+{
+    "name": "host-playground",
+    "version": "0.1.0",
+    "private": true,
+    "packageManager": "npm@10.9.4",
+    "workspaces": [
+        "apps/*",
+        "packages/*",
+        "examples/*"
+    ],
+    "scripts": {
+        "build": "turbo build",
+        "test": "turbo test",
+        "typecheck": "turbo typecheck",
+        "e2e": "turbo e2e"
+    },
+    "devDependencies": {
+        "turbo": "^2.3.3",
+        "typescript": "^5.9.3",
+        "vitest": "^4.1.11"
+    }
+}
