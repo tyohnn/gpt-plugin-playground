@@ -141,6 +141,8 @@ export interface Host
     /** 모델이 도구를 부른다. 새 판의 `_meta` 를 싣는다 */
     readonly callTool: (name: string, args?: Json, more?: Json) => Promise<Json>;
     readonly readResource: (uri: string) => Promise<Json>;
+    /** 그 밖의 서버 요청(`server/discover` 등). 새 판의 `_meta` 를 싣는다 */
+    readonly request: (method: string, params?: Json) => Promise<Json>;
     readonly detachContext: (session: string) => void;
     readonly notify: (session: string, method: string, params?: Json) => void;
     readonly setTheme: (theme: Theme) => void;
@@ -476,6 +478,7 @@ export const createHost = (options: HostOptions): Host =>
         tools: () => options.tools,
         callTool: async (name, args = {}, more = {}) => await server("tools/call", { name, arguments: args, ...more }),
         readResource: async (uri) => await server("resources/read", { uri }),
+        request: async (method, params = {}) => await server(method, params),
         detachContext: (id) =>
         {
             const session = sessions.get(id);

@@ -20,6 +20,8 @@ export interface Turn
     /** 화면들이 `ui/update-model-context` 로 붙여 둔 것 */
     readonly contexts: ReadonlyArray<Json>;
     readonly tools: ReadonlyArray<Pick<Tool, "name">>;
+    /** 온보딩처럼 호스트가 스킬을 모델에게 건넨 차례면 그 스킬 */
+    readonly skill?: { readonly name: string; readonly body: string };
 }
 
 export type Action =
