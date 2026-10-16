@@ -2,7 +2,15 @@
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
         "jsx": "react-jsx",
-        "types": ["vite/client"]
+        "types": [
+            "vite/client",
+            "node"
+        ],
+        "paths": {
+            "@host-playground/ui/icons": [
+                "../../packages/ui/src/icons/libraries/hugeicons.tsx"
+            ]
+        }
     },
     "include": ["src", "vite.config.ts"]
 }

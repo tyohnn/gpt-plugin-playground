@@ -1,0 +1,20 @@
+/* tyohnn:begin system */
+/* Design system loam (tyohnn). One system per app; this order is the cascade contract: tailwindcss → layer 1
+   globals → layer 1 theme colours → layer 2 tokens → typeset → layer 3 rules in layer(base), so className utilities still win. */
+@import "tailwindcss";
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";
+@import "pretendard/dist/web/static/pretendard.css";
+@import "@host-playground/ui/systems/loam/globals.css";
+@import "@host-playground/ui/systems/loam/theme.css";
+@import "@host-playground/ui/systems/loam/tokens.css";
+@import "@host-playground/ui/systems/loam/typeset.css";
+@import "@host-playground/ui/systems/loam/typeset-preset.css";
+@import "@host-playground/ui/systems/loam/style.css" layer(base);
+/* tyohnn:end system */
+
+/* tyohnn:begin theme */
+/* Tailwind does not scan workspace packages by itself; the system folders hold CSS, not class names. */
+@source "../../../packages/ui/src";
+@source not "../../../packages/ui/src/systems";
+/* tyohnn:end theme */
