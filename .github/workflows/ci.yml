@@ -1,0 +1,20 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npx -y npm@11.6.2 ci
+      - run: npx turbo typecheck test
+      - run: npm run build -w @host-playground/shell && npm run build -w gpt-plugin-playground
+      - run: npx playwright install --with-deps chromium
+      - run: npm run e2e -w gpt-plugin-playground
