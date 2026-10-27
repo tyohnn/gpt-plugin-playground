@@ -7,7 +7,7 @@ import { createPlayground, type PlaygroundOptions } from "./server";
  * Playwright 고정 장치. 플레이그라운드를 띄우고, 모델 자리에 시나리오의 대본을 앉힌다.
  *
  * ```ts
- * import { test, expect } from "host-playground/playwright";
+ * import { test, expect } from "gpt-plugin-playground/playwright";
  *
  * test.use({ playground: { server: "http://127.0.0.1:4200/api/mcp", files: ["fixtures/신청서.hwpx"] } });
  *

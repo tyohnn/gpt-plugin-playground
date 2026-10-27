@@ -246,7 +246,7 @@ export const createHost = (options: HostOptions): Host =>
         switch (method)
         {
             case "ui/initialize":
-                return { protocolVersion: APPS_VERSION, hostInfo: { name: "host-playground", version: "0.1.0" }, hostCapabilities: hostCapabilities(platform), hostContext: hostContext(session) };
+                return { protocolVersion: APPS_VERSION, hostInfo: { name: "gpt-plugin-playground", version: "0.1.0" }, hostCapabilities: hostCapabilities(platform), hostContext: hostContext(session) };
 
             case "tools/call":
             {

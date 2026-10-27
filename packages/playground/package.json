@@ -1,10 +1,10 @@
 {
-    "name": "host-playground",
+    "name": "gpt-plugin-playground",
     "version": "0.1.0",
     "description": "ChatGPT 호스트를 흉내 내 MCP 플러그인을 실물 없이 끝까지 돌린다",
     "type": "module",
     "bin": {
-        "host-playground": "dist/cli.js"
+        "gpt-plugin-playground": "dist/cli.js"
     },
     "exports": {
         ".": { "import": "./dist/server.js", "require": "./dist/server.cjs" },
